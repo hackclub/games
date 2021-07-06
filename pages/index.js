@@ -222,7 +222,7 @@ export default function App() {
             textDecorationLine: 'wavy'
           }}
         >
-          <Text sx={{ borderTop: '1px solid', borderColor: 'muted', pt: 2 }}>
+          <Text as="div" sx={{ borderTop: '1px solid', borderColor: 'muted', pt: 2, width: 'fit-content', margin: 'auto' }}>
             A project by <a href="https://hackclub.com">Hack Club</a>, website
             source available{' '}
             <a href="https://github.com/hackclub/games">here</a>.
