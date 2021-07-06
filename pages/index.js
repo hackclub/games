@@ -142,24 +142,24 @@ export default function App() {
             <Box sx={{ textAlign: 'left' }}>
               🎉 Opening Ceremony & Marathon Launch
             </Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>17/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
             <Box sx={{ textAlign: 'left' }}>🏹 CSS Archery</Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
-            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>18/7 8:00PM</Box>
+            <Box sx={{ textAlign: 'left' }}>19/7 8:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>🏃‍♂️ The Typing Sprints</Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
-            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>19/7 8:00PM</Box>
+            <Box sx={{ textAlign: 'left' }}>20/7 8:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>🌈 The Webnastics</Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
-            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>20/7 8:00PM</Box>
+            <Box sx={{ textAlign: 'left' }}>21/7 8:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw</Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
-            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>21/7 8:00PM</Box>
+            <Box sx={{ textAlign: 'left' }}>22/7 8:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>
               👏 Closing Ceremony
             </Box>
-            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>22/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
           </Grid>
         </Box>
