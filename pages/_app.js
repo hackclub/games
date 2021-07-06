@@ -53,11 +53,13 @@ export default class App extends NextApp {
     return (
       <ThemeProvider theme={theme}>
         <Head>
-        <Meta
-          name="Hack Club"
-          title="Hacker Games"
-          description={`As we rise out of the COVID-19 pandemic, we're bringing the Hacker World together to participate in the Hacker Games. We'll have bucket loads of fun, make new friends and participate in a hacking pentathlon over the week. All over Zoom & Slack from July 17th to July 22nd.`}
-        /></Head>
+          <Meta
+            name="Hack Club"
+            title="The Hacker Games"
+            description={`As we rise out of the COVID-19 pandemic, we're bringing the Hacker World together to participate in the Hacker Games. We'll have bucket loads of fun, make new friends and participate in a hacking pentathlon over the week. All over Zoom & Slack from July 17th to July 22nd.`}
+          />
+          <title>The Hacker Games by Hack Club</title>
+        </Head>
         <Component {...pageProps} />
       </ThemeProvider>
     )
