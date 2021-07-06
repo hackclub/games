@@ -14,11 +14,6 @@ import colours from '../lib/colours'
 import names from '../lib/names.json'
 
 export default function App({ country }) {
-  console.log(country.colours[1] === undefined
-    ? country.colours[0].toLowerCase() === 'red'
-      ? 'white'
-      : country.colours[0].toLowerCase()
-    : country.colours[1].toLowerCase())
   return (
     <Box sx={{ bg: 'black' }}>
       <Box
@@ -42,7 +37,7 @@ export default function App({ country }) {
               marginBlockStart: '0em',
               marginBlockEnd: '0em',
               lineHeight: '0.9',
-              color: country.colours[0].toLowerCase(),
+              color: country.colours[0].toLowerCase().trim(),
               textShadow: 'card'
             }}
           >
@@ -55,10 +50,11 @@ export default function App({ country }) {
               marginBlockEnd: '0em',
               lineHeight: '0.9',
               color: (country.colours[1] === undefined
-                  ? country.colours[0].toLowerCase() === 'red'
-                    ? 'white'
-                    : country.colours[0].toLowerCase()
-                  : country.colours[1].toLowerCase()).trim(),
+                ? country.colours[0].toLowerCase() === 'red'
+                  ? 'white'
+                  : country.colours[0].toLowerCase()
+                : country.colours[1].toLowerCase()
+              ).trim(),
               textShadow: 'card'
             }}
           >
@@ -211,7 +207,7 @@ export default function App({ country }) {
           </Box>
         </Box>
       </Box>
-      <Box>
+      <Box sx={{bg: country.colours[0].toLowerCase().trim() === 'blue' || country.colours[1].toLowerCase().trim() === 'blue' ? 'sunken' : 'bg' }}>
         <Box
           sx={{
             mx: [2, 'auto'],
@@ -221,9 +217,19 @@ export default function App({ country }) {
           }}
         >
           <Heading as="h1" sx={{ fontSize: ['3em', '4em'] }}>
-            <Text sx={theme.util.gxText('green', 'yellow')}>
-              Team Australia
-            </Text>{' '}
+            <Text
+              sx={{textShadow: 'card', ...theme.util.gxText(
+                country.colours[0].toLowerCase().trim(),
+                (country.colours[1] === undefined
+                  ? country.colours[0].toLowerCase() === 'red'
+                    ? 'white'
+                    : country.colours[0].toLowerCase()
+                  : country.colours[1].toLowerCase()
+                ).trim()
+              )}}
+            >
+              Team {country.full}
+            </Text>
             <br />
             needs you, sign up today!
           </Heading>
@@ -246,7 +252,7 @@ export default function App({ country }) {
           </Box>
         </Box>
       </Box>
-      <Box>
+      <Box sx={{bg: country.colours[0].toLowerCase().trim() === 'blue' || country.colours[1].toLowerCase().trim() === 'blue' ? 'sunken' : 'bg' }}>
         <Box
           sx={{
             margin: 'auto',
