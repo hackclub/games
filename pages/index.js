@@ -107,11 +107,7 @@ export default function App({ country }) {
           my={2}
           sx={{ fontSize: '1.3em', maxWidth: '800px', mx: [2, 'auto'] }}
         >
-          Everyone will get some epic stickers for participating. The top three
-          from every individual event will get a custom plaque & a $25
-          electronics voucher. Whilst the top three overall will get a $100, $75
-          & $50 electronics voucher respectively with the ultimate sticker
-          trophy.
+          Events have designed to be great fun and beginner friendly. They last for about 30 minutes at two different times on each day.
         </Box>
         <Box
           sx={{
@@ -256,7 +252,7 @@ export default function App({ country }) {
             </Text>
             {' '}needs you, sign up today!
           </Heading>
-          <Box sx={{ fontSize: '1.3em', mt: 2 }}>
+          <Box sx={{ fontSize: '1.3em', mt: 2}}>
             Upon receiving your registration, we'll send over a confirmation
             email with more details.
           </Box>
