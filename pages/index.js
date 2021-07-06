@@ -26,12 +26,12 @@ export default function App() {
         }}
       >
         <Box>
-          <Heading sx={{ fontSize: '3vw', textShadow: 'card' }}>
+          <Heading sx={{ fontSize: ['7vw', '3vw'], textShadow: 'card' }}>
             Represent Australia in the
           </Heading>
           <Heading
             sx={{
-              fontSize: '15vw',
+              fontSize: ['30vw', '15vw'],
               marginBlockStart: '0em',
               marginBlockEnd: '0em',
               lineHeight: '0.9',
@@ -43,7 +43,7 @@ export default function App() {
           </Heading>
           <Heading
             sx={{
-              fontSize: '15vw',
+              fontSize: ['30vw', '15vw'],
               marginBlockStart: '0em',
               marginBlockEnd: '0em',
               lineHeight: '0.9',
@@ -53,15 +53,22 @@ export default function App() {
           >
             Games
           </Heading>
-          <Heading sx={{ fontSize: '3vw', textShadow: 'card' }}>
+          <Heading sx={{ fontSize: ['9vw', '3vw'], textShadow: 'card' }}>
             From July 17th to July 22nd, all online.
           </Heading>
-          <Flex sx={{ justifyContent: 'center' }} mt={3}>
-            <Button sx={{ borderRadius: '6px' }} mr={3}>
+          <Box
+            sx={{
+              justifyContent: 'center',
+              display: ['block', 'flex'],
+              textAlign: 'center'
+            }}
+            mt={3}
+          >
+            <Button mr={[0, 3]} mb={[3, 0]} sx={{ borderRadius: '6px' }}>
               Register with Hack Club Slack
             </Button>
             <Button sx={{ borderRadius: '6px' }}>Register with GitHub</Button>
-          </Flex>
+          </Box>
         </Box>
       </Box>
       <Box py={4}>
@@ -72,7 +79,8 @@ export default function App() {
             borderColor: 'muted',
             margin: 'auto',
             p: 3,
-            fontSize: '1.3em',
+            mx: [2, 'auto'],
+            fontSize: ['1em', '1.3em'],
             borderRadius: 6
           }}
         >
@@ -85,7 +93,7 @@ export default function App() {
         </Box>
       </Box>
       <Box px={[3, 5]} sx={{ textAlign: 'center' }}>
-        <Heading as="h1" mb={4} sx={{ fontSize: '3em' }}>
+        <Heading as="h1" mb={4} sx={{ fontSize: '2.5em' }}>
           Participate in <i>all sorts</i> of hacking events.
         </Heading>
         <Box
@@ -98,7 +106,7 @@ export default function App() {
           }}
         >
           <Grid
-            columns="2fr 1fr 1fr"
+            columns={['1fr', "2fr 1fr 1fr"]}
             gap={0}
             sx={{
               div: {
@@ -113,20 +121,22 @@ export default function App() {
                 color: 'white',
                 borderTopLeftRadius: 7,
                 textAlign: 'left',
-                fontWeight: '800'
+                fontWeight: '800',
+                borderTopRightRadius: [7, 0]
               }}
             >
-              Event
+              Event<Text sx={{ display: ['inline', 'none'] }}>s Schedule</Text>
             </Box>
             <Box
               sx={{
                 bg: 'red',
                 color: 'white',
                 textAlign: 'left',
-                fontWeight: '800'
+                fontWeight: '800',
+                display: ['none', 'block']
               }}
             >
-              1st Time
+              <Text sx={{ display: ['none', 'inline'] }}>1st Time</Text>
             </Box>
             <Box
               sx={{
@@ -134,13 +144,14 @@ export default function App() {
                 color: 'white',
                 borderTopRightRadius: 7,
                 textAlign: 'left',
-                fontWeight: '800'
+                fontWeight: '800',
+                display: ['none', 'block']
               }}
             >
-              2nd Time
+              <Text sx={{ display: ['none', 'inline'] }}>2nd Time</Text>
             </Box>
             <Box sx={{ textAlign: 'left' }}>
-              🎉 Opening Ceremony & Marathon Launch
+              🎉 Opening Ceremony & Marathon Launch <Text sx={{ display: ['inline', 'none'] }}>at 17/7 12:00AM.</Text>
             </Box>
             <Box sx={{ textAlign: 'left' }}>17/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
@@ -156,22 +167,21 @@ export default function App() {
             <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw</Box>
             <Box sx={{ textAlign: 'left' }}>21/7 8:00PM</Box>
             <Box sx={{ textAlign: 'left' }}>22/7 8:00AM</Box>
-            <Box sx={{ textAlign: 'left' }}>
-              👏 Closing Ceremony
-            </Box>
+            <Box sx={{ textAlign: 'left' }}>👏 Closing Ceremony</Box>
             <Box sx={{ textAlign: 'left' }}>22/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
           </Grid>
         </Box>
       </Box>
       <Box
-        px={5}
+        px={[2, 5]}
         sx={{
           textAlign: 'center',
 
           backgroundImage:
             'linear-gradient(180deg, rgba(1,1,1,0.9199054621848739) 0%, rgba(1,1,1,0.8906897759103641) 100%), url(https://cloud-kx3bar6aw-hack-club-bot.vercel.app/0bg_banner.png)',
           backgroundSize: 'cover',
+          backgroundPosition: 'center',
           py: 5
         }}
         mt={5}
@@ -191,9 +201,9 @@ export default function App() {
       </Box>
       <Box>
         <Box
-          sx={{ margin: 'auto', maxWidth: '800px', py: 5, textAlign: 'center' }}
+          sx={{ mx: [2, 'auto'], maxWidth: '800px', py: 5, textAlign: 'center' }}
         >
-          <Heading as="h1" sx={{ fontSize: '4em' }}>
+          <Heading as="h1" sx={{ fontSize: ['3em', '4em'] }}>
             <Text sx={theme.util.gxText('green', 'yellow')}>
               Team Australia
             </Text>{' '}
@@ -201,15 +211,22 @@ export default function App() {
             needs you, sign up today!
           </Heading>
           <Box sx={{ fontSize: '1.3em', mt: 2 }}>
-            Upon receiving your registration, we'll send over a confirmation email
-            with more details.
+            Upon receiving your registration, we'll send over a confirmation
+            email with more details.
           </Box>
-          <Flex sx={{ justifyContent: 'center' }} mt={3}>
-            <Button sx={{ borderRadius: '6px' }} mr={3}>
+          <Box
+            sx={{
+              justifyContent: 'center',
+              display: ['block', 'flex'],
+              textAlign: 'center'
+            }}
+            mt={3}
+          >
+            <Button mr={[0, 3]} mb={[3, 0]} sx={{ borderRadius: '6px' }}>
               Register with Hack Club Slack
             </Button>
             <Button sx={{ borderRadius: '6px' }}>Register with GitHub</Button>
-          </Flex>
+          </Box>
         </Box>
       </Box>
       <Box>
@@ -222,7 +239,16 @@ export default function App() {
             textDecorationLine: 'wavy'
           }}
         >
-          <Text as="div" sx={{ borderTop: '1px solid', borderColor: 'muted', pt: 2, width: 'fit-content', margin: 'auto' }}>
+          <Text
+            as="div"
+            sx={{
+              borderTop: '1px solid',
+              borderColor: 'muted',
+              pt: 2,
+              width: 'fit-content',
+              margin: 'auto'
+            }}
+          >
             A project by <a href="https://hackclub.com">Hack Club</a>, website
             source available{' '}
             <a href="https://github.com/hackclub/games">here</a>.
