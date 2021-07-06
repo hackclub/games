@@ -140,15 +140,27 @@ export default function App() {
               2nd Time
             </Box>
             <Box sx={{ textAlign: 'left' }}>
-              Opening Ceremony & Marathon Launch
+              🎉 Opening Ceremony & Marathon Launch
             </Box>
             <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
-            <Box sx={{ textAlign: 'left' }}>
-              Opening Ceremony & Marathon Launch
-            </Box>
+            <Box sx={{ textAlign: 'left' }}>🏹 CSS Archery</Box>
             <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>🏃‍♂️ The Typing Sprints</Box>
+            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>🌈 The Webnastics</Box>
+            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw</Box>
+            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>3/7 8:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>
+              👏 Closing Ceremony
+            </Box>
+            <Box sx={{ textAlign: 'left' }}>2/7 12:00AM</Box>
+            <Box sx={{ textAlign: 'left' }}>N/A</Box>
           </Grid>
         </Box>
       </Box>
@@ -189,7 +201,7 @@ export default function App() {
             needs you, sign up today!
           </Heading>
           <Box sx={{ fontSize: '1.3em', mt: 2 }}>
-            On receiving your registration, we'll send over a confirmation email
+            Upon receiving your registration, we'll send over a confirmation email
             with more details.
           </Box>
           <Flex sx={{ justifyContent: 'center' }} mt={3}>
@@ -210,7 +222,7 @@ export default function App() {
             textDecorationLine: 'wavy'
           }}
         >
-          <Text sx={{ borderTop: '1px solid', borderColor: 'muted', pt: 2}}>
+          <Text sx={{ borderTop: '1px solid', borderColor: 'muted', pt: 2 }}>
             A project by <a href="https://hackclub.com">Hack Club</a>, website
             source available{' '}
             <a href="https://github.com/hackclub/games">here</a>.
