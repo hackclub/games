@@ -3,7 +3,6 @@ import NextApp from 'next/app'
 import '@hackclub/theme/fonts/reg-bold.css'
 import base from '@hackclub/theme'
 import { ThemeProvider } from 'theme-ui'
-import ColorSwitcher from '../components/color-switcher'
 
 let theme = base
 
