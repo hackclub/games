@@ -100,9 +100,19 @@ export default function App({ country }) {
         </Box>
       </Box>
       <Box px={[3, 5]} sx={{ textAlign: 'center' }}>
-        <Heading as="h1" mb={4} sx={{ fontSize: '2.5em' }}>
+        <Heading as="h1" sx={{ fontSize: '2.5em' }}>
           Participate in <i>all sorts</i> of hacking events.
         </Heading>
+        <Box
+          my={2}
+          sx={{ fontSize: '1.3em', maxWidth: '800px', mx: [2, 'auto'] }}
+        >
+          Everyone will get some epic stickers for participating. The top three
+          from every individual event will get a custom plaque & a $25
+          electronics voucher. Whilst the top three overall will get a $100, $75
+          & $50 electronics voucher respectively with the ultimate sticker
+          trophy.
+        </Box>
         <Box
           sx={{
             bg: 'white',
@@ -200,14 +210,22 @@ export default function App({ country }) {
           </Heading>
           <Box mt={2} sx={{ fontSize: '1.3em' }}>
             Everyone will get some epic stickers for participating. The top
-            three from every individual event will get a custom plaque & a
-            $25 electronics voucher. Whilst the top three overall will get a
-            $100, $75 & $50 electronics voucher respectively with the ultimate
-            sticker trophy.
+            three from every individual event will get a custom plaque & a $25
+            electronics voucher. Whilst the top three overall will get a $100,
+            $75 & $50 electronics voucher respectively with the ultimate sticker
+            trophy.
           </Box>
         </Box>
       </Box>
-      <Box sx={{bg: country.colours[0].toLowerCase().trim() === 'blue' || country.colours[1].toLowerCase().trim() === 'blue' ? 'sunken' : 'bg' }}>
+      <Box
+        sx={{
+          bg:
+            country.colours[0].toLowerCase().trim() === 'blue' ||
+            country.colours[1].toLowerCase().trim() === 'blue'
+              ? 'sunken'
+              : 'bg'
+        }}
+      >
         <Box
           sx={{
             mx: [2, 'auto'],
@@ -216,22 +234,27 @@ export default function App({ country }) {
             textAlign: 'center'
           }}
         >
-          <Heading as="h1" sx={{ fontSize: ['3em', '4em'] }}>
+          <Heading as="h1" sx={{ fontSize: ['3em', '4em'], width: '600px', margin: 'auto' }}>
             <Text
-              sx={{textShadow: 'card', ...theme.util.gxText(
-                country.colours[0].toLowerCase().trim(),
-                (country.colours[1] === undefined
-                  ? country.colours[0].toLowerCase() === 'red'
-                    ? 'white'
-                    : country.colours[0].toLowerCase()
-                  : country.colours[1].toLowerCase()
-                ).trim()
-              )}}
+              sx={{
+                textShadow: 'card',
+                ...theme.util.gxText(
+                  country.colours[0].toLowerCase().trim(),
+                  (country.colours[1] === undefined
+                    ? country.colours[0].toLowerCase() === 'red'
+                      ? 'white'
+                      : country.colours[0].toLowerCase()
+                    : country.colours[1].toLowerCase()
+                  ).trim()
+                )
+              }}
             >
-              Team {country.full}
+              Team{' '}
+              {country.full.trim().split(' ')[0].toUpperCase().trim() === 'THE'
+                ? country.full.replace('the', '').trim()
+                : country.full}
             </Text>
-            <br />
-            needs you, sign up today!
+            {' '}needs you, sign up today!
           </Heading>
           <Box sx={{ fontSize: '1.3em', mt: 2 }}>
             Upon receiving your registration, we'll send over a confirmation
@@ -252,7 +275,15 @@ export default function App({ country }) {
           </Box>
         </Box>
       </Box>
-      <Box sx={{bg: country.colours[0].toLowerCase().trim() === 'blue' || country.colours[1].toLowerCase().trim() === 'blue' ? 'sunken' : 'bg' }}>
+      <Box
+        sx={{
+          bg:
+            country.colours[0].toLowerCase().trim() === 'blue' ||
+            country.colours[1].toLowerCase().trim() === 'blue'
+              ? 'sunken'
+              : 'bg'
+        }}
+      >
         <Box
           sx={{
             margin: 'auto',
