@@ -200,7 +200,7 @@ export default function App({ country }) {
           </Heading>
           <Box mt={2} sx={{ fontSize: '1.3em' }}>
             Everyone will get some epic stickers for participating. The top
-            three from every individual event will get a custom RGB medal & a
+            three from every individual event will get a custom plaque & a
             $25 electronics voucher. Whilst the top three overall will get a
             $100, $75 & $50 electronics voucher respectively with the ultimate
             sticker trophy.
