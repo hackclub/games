@@ -10,8 +10,15 @@ import {
 } from 'theme-ui'
 import theme from '@hackclub/theme'
 import Sparkles from '../components/sparkles'
+import colours from '../lib/colours'
+import names from '../lib/names.json'
 
-export default function App() {
+export default function App({ country }) {
+  console.log(country.colours[1] === undefined
+    ? country.colours[0].toLowerCase() === 'red'
+      ? 'white'
+      : country.colours[0].toLowerCase()
+    : country.colours[1].toLowerCase())
   return (
     <Box sx={{ bg: 'black' }}>
       <Box
@@ -27,7 +34,7 @@ export default function App() {
       >
         <Box>
           <Heading sx={{ fontSize: ['7vw', '3vw'], textShadow: 'card' }}>
-            Represent Australia in the
+            Represent {country.full} in the
           </Heading>
           <Heading
             sx={{
@@ -35,7 +42,7 @@ export default function App() {
               marginBlockStart: '0em',
               marginBlockEnd: '0em',
               lineHeight: '0.9',
-              color: 'green',
+              color: country.colours[0].toLowerCase(),
               textShadow: 'card'
             }}
           >
@@ -47,7 +54,11 @@ export default function App() {
               marginBlockStart: '0em',
               marginBlockEnd: '0em',
               lineHeight: '0.9',
-              color: 'yellow',
+              color: (country.colours[1] === undefined
+                  ? country.colours[0].toLowerCase() === 'red'
+                    ? 'white'
+                    : country.colours[0].toLowerCase()
+                  : country.colours[1].toLowerCase()).trim(),
               textShadow: 'card'
             }}
           >
@@ -106,7 +117,7 @@ export default function App() {
           }}
         >
           <Grid
-            columns={['1fr', "2fr 1fr 1fr"]}
+            columns={['1fr', '2fr 1fr 1fr']}
             gap={0}
             sx={{
               div: {
@@ -151,7 +162,8 @@ export default function App() {
               <Text sx={{ display: ['none', 'inline'] }}>2nd Time</Text>
             </Box>
             <Box sx={{ textAlign: 'left' }}>
-              🎉 Opening Ceremony & Marathon Launch <Text sx={{ display: ['inline', 'none'] }}>at 17/7 12:00AM.</Text>
+              🎉 Opening Ceremony & Marathon Launch{' '}
+              <Text sx={{ display: ['inline', 'none'] }}>at 17/7 12:00AM.</Text>
             </Box>
             <Box sx={{ textAlign: 'left' }}>17/7 12:00AM</Box>
             <Box sx={{ textAlign: 'left' }}>N/A</Box>
@@ -201,7 +213,12 @@ export default function App() {
       </Box>
       <Box>
         <Box
-          sx={{ mx: [2, 'auto'], maxWidth: '800px', py: 5, textAlign: 'center' }}
+          sx={{
+            mx: [2, 'auto'],
+            maxWidth: '800px',
+            py: 5,
+            textAlign: 'center'
+          }}
         >
           <Heading as="h1" sx={{ fontSize: ['3em', '4em'] }}>
             <Text sx={theme.util.gxText('green', 'yellow')}>
@@ -268,4 +285,46 @@ export default function App() {
       `}</style>
     </Box>
   )
+}
+
+export async function getServerSideProps(context) {
+  const geoip = require('geoip-country')
+  const { filter } = require('lodash')
+  const sortedColours = colours.map(colour => ({
+    country:
+      names[
+        colour['Country']
+          .replace(' ', '')
+          .normalize('NFD')
+          .replace('the', '')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/\W/g, '')
+          .toLocaleUpperCase()
+      ],
+    full: colour['Country'],
+    colours: colour['Primary colours']
+      .replace('and', ',')
+      .replace(' ', '')
+      .split(',')
+  }))
+  const ip = context.req.headers['x-forwarded-for']
+    ? context.req.headers['x-forwarded-for']
+    : '23.235.60.92'
+  console.log(geoip.lookup(ip))
+  const country = filter(
+    sortedColours,
+    colour => colour.country === geoip.lookup(ip).country
+  )
+
+  console.log(country)
+
+  if (typeof country[0] == 'undefined') {
+    return {
+      props: { countryNotFound: true }
+    }
+  } else {
+    return {
+      props: { country: country[0] }
+    }
+  }
 }
