@@ -14,7 +14,7 @@ import colours from '../lib/colours'
 import names from '../lib/names.json'
 import { useState } from 'react'
 
-export default function App({ country }) {
+export default function App({ country, countryNotFound }) {
   const [formOpen, setFormOpen] = useState(false)
   return (
     <>
@@ -32,7 +32,11 @@ export default function App({ country }) {
         >
           <Box>
             <Heading sx={{ fontSize: ['7vw', '3vw'], textShadow: 'card' }}>
-              Represent {country.full} in the
+              {countryNotFound ? (
+                'Represent your country in the'
+              ) : (
+                <>Represent {country.full} in the</>
+              )}
             </Heading>
             <Heading
               sx={{
@@ -40,7 +44,9 @@ export default function App({ country }) {
                 marginBlockStart: '0em',
                 marginBlockEnd: '0em',
                 lineHeight: '0.9',
-                color: country.colours[0].toLowerCase().trim(),
+                color: countryNotFound
+                  ? 'green'
+                  : country.colours[0].toLowerCase().trim(),
                 textShadow: 'card'
               }}
             >
@@ -52,12 +58,14 @@ export default function App({ country }) {
                 marginBlockStart: '0em',
                 marginBlockEnd: '0em',
                 lineHeight: '0.9',
-                color: (country.colours[1] === undefined
-                  ? country.colours[0].toLowerCase() === 'red'
-                    ? 'white'
-                    : country.colours[0].toLowerCase()
-                  : country.colours[1].toLowerCase()
-                ).trim(),
+                color: countryNotFound
+                  ? 'yellow'
+                  : (country.colours[1] === undefined
+                      ? country.colours[0].toLowerCase() === 'red'
+                        ? 'white'
+                        : country.colours[0].toLowerCase()
+                      : country.colours[1].toLowerCase()
+                    ).trim(),
                 textShadow: 'card'
               }}
             >
@@ -225,11 +233,12 @@ export default function App({ country }) {
         </Box>
         <Box
           sx={{
-            bg:
-              country.colours[0].toLowerCase().trim() === 'blue' ||
-              country.colours[1].toLowerCase().trim() === 'blue'
+            bg: !countryNotFound
+              ? country.colours[0].toLowerCase().trim() === 'blue' ||
+                country.colours[1].toLowerCase().trim() === 'blue'
                 ? 'sunken'
                 : 'bg'
+              : 'bg'
           }}
         >
           <Box
@@ -244,6 +253,7 @@ export default function App({ country }) {
               as="h1"
               sx={{ fontSize: ['3em', '4em'], width: '600px', margin: 'auto' }}
             >
+              {!countryNotFound ? <>
               <Text
                 sx={{
                   textShadow: 'card',
@@ -263,7 +273,7 @@ export default function App({ country }) {
                 'THE'
                   ? country.full.replace('the', '').trim()
                   : country.full}
-              </Text>{' '}
+              </Text>{' '}</> : 'Your country '}
               needs you, sign up today!
             </Heading>
             <Box sx={{ fontSize: '1.3em', mt: 2 }}>
@@ -290,11 +300,12 @@ export default function App({ country }) {
         </Box>
         <Box
           sx={{
-            bg:
-              country.colours[0].toLowerCase().trim() === 'blue' ||
-              country.colours[1].toLowerCase().trim() === 'blue'
+            bg: !countryNotFound
+              ? country.colours[0].toLowerCase().trim() === 'blue' ||
+                country.colours[1].toLowerCase().trim() === 'blue'
                 ? 'sunken'
                 : 'bg'
+              : 'bg'
           }}
         >
           <Box
@@ -361,6 +372,7 @@ export default function App({ country }) {
 }
 
 export async function getServerSideProps(context) {
+  try{
   const geoip = require('geoip-country')
   const { filter } = require('lodash')
   const sortedColours = colours.map(colour => ({
@@ -382,7 +394,7 @@ export async function getServerSideProps(context) {
   }))
   const ip = context.req.headers['x-forwarded-for']
     ? context.req.headers['x-forwarded-for']
-    : '23.235.60.92'
+    : '23.235.60.91112'
   console.log(geoip.lookup(ip))
   const country = filter(
     sortedColours,
@@ -398,6 +410,11 @@ export async function getServerSideProps(context) {
   } else {
     return {
       props: { country: country[0] }
+    }
+  }}
+  catch(e) {
+    return {
+      props: { countryNotFound: true }
     }
   }
 }
