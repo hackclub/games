@@ -13,6 +13,7 @@ import Sparkles from '../components/sparkles'
 import colours from '../lib/colours'
 import names from '../lib/names.json'
 import { useState } from 'react'
+import tt from 'tinytime'
 
 export default function App({ country, countryNotFound }) {
   const [formOpen, setFormOpen] = useState(false)
@@ -182,26 +183,46 @@ export default function App({ country, countryNotFound }) {
               <Box sx={{ textAlign: 'left' }}>
                 🎉 Opening Ceremony & Marathon Launch{' '}
                 <Text sx={{ display: ['inline', 'none'] }}>
-                  at 17/7 12:00AM.
+                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-17T16:00:00.000Z'))}.
                 </Text>
               </Box>
-              <Box sx={{ textAlign: 'left' }}>17/7 12:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>N/A</Box>
-              <Box sx={{ textAlign: 'left' }}>🏹 CSS Archery</Box>
-              <Box sx={{ textAlign: 'left' }}>18/7 8:00PM</Box>
-              <Box sx={{ textAlign: 'left' }}>19/7 8:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>🏃‍♂️ The Typing Sprints</Box>
-              <Box sx={{ textAlign: 'left' }}>19/7 8:00PM</Box>
-              <Box sx={{ textAlign: 'left' }}>20/7 8:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>🌈 The Webnastics</Box>
-              <Box sx={{ textAlign: 'left' }}>20/7 8:00PM</Box>
-              <Box sx={{ textAlign: 'left' }}>21/7 8:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw</Box>
-              <Box sx={{ textAlign: 'left' }}>21/7 8:00PM</Box>
-              <Box sx={{ textAlign: 'left' }}>22/7 8:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>👏 Closing Ceremony</Box>
-              <Box sx={{ textAlign: 'left' }}>22/7 12:00AM</Box>
-              <Box sx={{ textAlign: 'left' }}>N/A</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-17T16:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>N/A</Box>
+              <Box sx={{ textAlign: 'left' }}>🏹 CSS Archery{' '}
+                <Text sx={{ display: ['inline', 'none'] }}>
+                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T24:00:00.000Z'))}.
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T12:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T24:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left' }}>🏃‍♂️ The Typing Sprints
+                <Text sx={{ display: ['inline', 'none'] }}>
+                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T24:00:00.000Z'))}.
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T12:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T24:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left' }}>🌈 The Webnastics
+              
+              <Text sx={{ display: ['inline', 'none'] }}>
+                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T24:00:00.000Z'))}.
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T12:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T24:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw
+              <Text sx={{ display: ['inline', 'none'] }}>
+                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T24:00:00.000Z'))}.
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T12:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T24:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left' }}>👏 Closing Ceremony{' '}
+                <Text sx={{ display: ['inline', 'none'] }}>
+                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-22T16:00:00.000Z'))}.
+                </Text></Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-22T16:00:00.000Z'))}</Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>N/A</Box>
             </Grid>
           </Box>
         </Box>
@@ -251,7 +272,7 @@ export default function App({ country, countryNotFound }) {
           >
             <Heading
               as="h1"
-              sx={{ fontSize: ['3em', '4em'], width: '600px', margin: 'auto' }}
+              sx={{ fontSize: ['3em', '4em'], maxWidth: '600px', margin: 'auto' }}
             >
               {!countryNotFound ? <>
               <Text
@@ -361,8 +382,8 @@ export default function App({ country, countryNotFound }) {
         <iframe
           className="airtable-embed"
           src="https://airtable.com/embed/shrYSkKEreuS6gQFR?backgroundColor=purple"
-          frameborder="0"
-          onmousewheel=""
+          frameBorder="0"
+          onMouseWheel=""
           width="100%"
           style={{ background: 'transparent', height: '100vh' }}
         ></iframe>
