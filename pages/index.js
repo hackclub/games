@@ -14,8 +14,10 @@ import colours from '../lib/colours'
 import names from '../lib/names.json'
 import { useState } from 'react'
 import tt from 'tinytime'
+import { useRouter } from 'next/router'
 
 export default function App({ country, countryNotFound }) {
+  let router = useRouter()
   const [formOpen, setFormOpen] = useState(false)
   return (
     <>
@@ -183,46 +185,138 @@ export default function App({ country, countryNotFound }) {
               <Box sx={{ textAlign: 'left' }}>
                 🎉 Opening Ceremony & Marathon Launch{' '}
                 <Text sx={{ display: ['inline', 'none'] }}>
-                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-17T16:00:00.000Z'))}.
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-17T16:00:00.000Z')
+                  )}
+                  .
                 </Text>
               </Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-17T16:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>N/A</Box>
-              <Box sx={{ textAlign: 'left' }}>🏹 CSS Archery{' '}
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-17T16:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                N/A
+              </Box>
+              <Box sx={{ textAlign: 'left' }}>
+                🏹 CSS Archery{' '}
                 <Text sx={{ display: ['inline', 'none'] }}>
-                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T24:00:00.000Z'))}.
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-18T12:00:00.000Z')
+                  )}{' '}
+                  &{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-18T24:00:00.000Z')
+                  )}
+                  .
                 </Text>
               </Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T12:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-18T24:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left' }}>🏃‍♂️ The Typing Sprints
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-18T12:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-18T24:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left' }}>
+                🏃‍♂️ The Typing Sprints
                 <Text sx={{ display: ['inline', 'none'] }}>
-                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T24:00:00.000Z'))}.
+                  {' '}
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-19T12:00:00.000Z')
+                  )}{' '}
+                  &{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-19T24:00:00.000Z')
+                  )}
+                  .
                 </Text>
               </Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T12:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-19T24:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left' }}>🌈 The Webnastics
-              
-              <Text sx={{ display: ['inline', 'none'] }}>
-                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T24:00:00.000Z'))}.
-                </Text>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-19T12:00:00.000Z')
+                )}
               </Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T12:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-20T24:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left' }}>✈️ The Airplane Throw
-              <Text sx={{ display: ['inline', 'none'] }}>
-                {' '}at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T12:00:00.000Z'))} & {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T24:00:00.000Z'))}.
-                </Text>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-19T24:00:00.000Z')
+                )}
               </Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T12:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-21T24:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left' }}>👏 Closing Ceremony{' '}
+              <Box sx={{ textAlign: 'left' }}>
+                🌈 The Webnastics
                 <Text sx={{ display: ['inline', 'none'] }}>
-                  at {tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-22T16:00:00.000Z'))}.
-                </Text></Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>{tt('{Do} {MM}, {h}:{mm}{a}').render(new Date('2021-07-22T16:00:00.000Z'))}</Box>
-              <Box sx={{ textAlign: 'left', display: ['none', 'block']  }}>N/A</Box>
+                  {' '}
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-20T12:00:00.000Z')
+                  )}{' '}
+                  &{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-20T24:00:00.000Z')
+                  )}
+                  .
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-20T12:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-20T24:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left' }}>
+                ✈️ The Airplane Throw
+                <Text sx={{ display: ['inline', 'none'] }}>
+                  {' '}
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-21T12:00:00.000Z')
+                  )}{' '}
+                  &{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-21T24:00:00.000Z')
+                  )}
+                  .
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-21T12:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-21T24:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left' }}>
+                👏 Closing Ceremony{' '}
+                <Text sx={{ display: ['inline', 'none'] }}>
+                  at{' '}
+                  {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                    new Date('2021-07-22T16:00:00.000Z')
+                  )}
+                  .
+                </Text>
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                {tt('{Do} {MM}, {h}:{mm}{a}').render(
+                  new Date('2021-07-22T16:00:00.000Z')
+                )}
+              </Box>
+              <Box sx={{ textAlign: 'left', display: ['none', 'block'] }}>
+                N/A
+              </Box>
             </Grid>
           </Box>
         </Box>
@@ -272,29 +366,38 @@ export default function App({ country, countryNotFound }) {
           >
             <Heading
               as="h1"
-              sx={{ fontSize: ['3em', '4em'], maxWidth: '600px', margin: 'auto' }}
+              sx={{
+                fontSize: ['3em', '4em'],
+                maxWidth: '600px',
+                margin: 'auto'
+              }}
             >
-              {!countryNotFound ? <>
-              <Text
-                sx={{
-                  textShadow: 'card',
-                  ...theme.util.gxText(
-                    country.colours[0].toLowerCase().trim(),
-                    (country.colours[1] === undefined
-                      ? country.colours[0].toLowerCase() === 'red'
-                        ? 'white'
-                        : country.colours[0].toLowerCase()
-                      : country.colours[1].toLowerCase()
-                    ).trim()
-                  )
-                }}
-              >
-                Team{' '}
-                {country.full.trim().split(' ')[0].toUpperCase().trim() ===
-                'THE'
-                  ? country.full.replace('the', '').trim()
-                  : country.full}
-              </Text>{' '}</> : 'Your country '}
+              {!countryNotFound ? (
+                <>
+                  <Text
+                    sx={{
+                      textShadow: 'card',
+                      ...theme.util.gxText(
+                        country.colours[0].toLowerCase().trim(),
+                        (country.colours[1] === undefined
+                          ? country.colours[0].toLowerCase() === 'red'
+                            ? 'white'
+                            : country.colours[0].toLowerCase()
+                          : country.colours[1].toLowerCase()
+                        ).trim()
+                      )
+                    }}
+                  >
+                    Team{' '}
+                    {country.full.trim().split(' ')[0].toUpperCase().trim() ===
+                    'THE'
+                      ? country.full.replace('the', '').trim()
+                      : country.full}
+                  </Text>{' '}
+                </>
+              ) : (
+                'Your country '
+              )}
               needs you, sign up today!
             </Heading>
             <Box sx={{ fontSize: '1.3em', mt: 2 }}>
@@ -373,9 +476,14 @@ export default function App({ country, countryNotFound }) {
             top: 3,
             right: 3,
             transform: 'rotate(45deg)',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            textShadow: '0px 0px 4px #000000;'
           }}
-          onClick={() => setFormOpen(false)}
+          onClick={() => {
+            setFormOpen(false)
+              router.reload()
+            
+          }}
         >
           <Heading>✚</Heading>
         </Box>
@@ -393,47 +501,47 @@ export default function App({ country, countryNotFound }) {
 }
 
 export async function getServerSideProps(context) {
-  try{
-  const geoip = require('geoip-country')
-  const { filter } = require('lodash')
-  const sortedColours = colours.map(colour => ({
-    country:
-      names[
-        colour['Country']
-          .replace(' ', '')
-          .normalize('NFD')
-          .replace('the', '')
-          .replace(/[\u0300-\u036f]/g, '')
-          .replace(/\W/g, '')
-          .toLocaleUpperCase()
-      ],
-    full: colour['Country'],
-    colours: colour['Primary colours']
-      .replace('and', ',')
-      .replace(' ', '')
-      .split(',')
-  }))
-  const ip = context.req.headers['x-forwarded-for']
-    ? context.req.headers['x-forwarded-for']
-    : '23.235.60.91112'
-  console.log(geoip.lookup(ip))
-  const country = filter(
-    sortedColours,
-    colour => colour.country === geoip.lookup(ip).country
-  )
+  try {
+    const geoip = require('geoip-country')
+    const { filter } = require('lodash')
+    const sortedColours = colours.map(colour => ({
+      country:
+        names[
+          colour['Country']
+            .replace(' ', '')
+            .normalize('NFD')
+            .replace('the', '')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/\W/g, '')
+            .toLocaleUpperCase()
+        ],
+      full: colour['Country'],
+      colours: colour['Primary colours']
+        .replace('and', ',')
+        .replace(' ', '')
+        .split(',')
+    }))
+    const ip = context.req.headers['x-forwarded-for']
+      ? context.req.headers['x-forwarded-for']
+      : '23.235.60.91112'
+    console.log(geoip.lookup(ip))
+    const country = filter(
+      sortedColours,
+      colour => colour.country === geoip.lookup(ip).country
+    )
 
-  console.log(country)
+    console.log(country)
 
-  if (typeof country[0] == 'undefined') {
-    return {
-      props: { countryNotFound: true }
+    if (typeof country[0] == 'undefined') {
+      return {
+        props: { countryNotFound: true }
+      }
+    } else {
+      return {
+        props: { country: country[0] }
+      }
     }
-  } else {
-    return {
-      props: { country: country[0] }
-    }
-  }}
-  catch(e) {
+  } catch (e) {
     return {
       props: { countryNotFound: true }
     }
