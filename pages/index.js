@@ -338,11 +338,10 @@ export default function App({ country, countryNotFound }) {
               With tons of <Sparkles>fun prizes</Sparkles> up for grabs!
             </Heading>
             <Box mt={2} sx={{ fontSize: '1.3em' }}>
-              Everyone will get some epic stickers for participating. The top
-              three from every individual event will get a custom plaque & a $25
+              The top three from every individual event will get a custom plaque & a $25
               electronics voucher. Whilst the top three overall will get a $100,
               $75 & $50 electronics voucher respectively with the ultimate
-              sticker trophy.
+              sticker trophy. The members of the winning national team will each get a mystery goodie packet.
             </Box>
           </Box>
         </Box>
