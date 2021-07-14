@@ -536,6 +536,9 @@ export async function getServerSideProps(context) {
         props: { countryNotFound: true }
       }
     } else {
+      if(country[0].colours[1] === undefined){
+        country[0].colours[1] = country[0].colours[0]
+      }
       return {
         props: { country: country[0] }
       }
