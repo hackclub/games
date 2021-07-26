@@ -1858,10 +1858,10 @@ gensync@^1.0.0-beta.1:
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.1.tgz#58f4361ff987e5ff6e1e7a210827aa371eaac269"
   integrity sha512-r8EC6NO1sngH/zdD9fiRDLdcgnbayXah+mLgManTaIZJqEC1MZstmnox8KpnI2/fxQwrp5OpCOYWLp4rBl4Jcg==
 
-geoip-country@^4.0.75:
-  version "4.0.75"
-  resolved "https://registry.yarnpkg.com/geoip-country/-/geoip-country-4.0.75.tgz#9aaee8b9549a6d590082b91ae70d9eac4d360b6d"
-  integrity sha512-QbMUiZyT8B1vk5WI7f2+f+BDZ+/AgJWtwYA47dDI6iF8g33SUtJi6fKM4Thtkxku3qtTDUOjAVTdietZU6zhnw==
+geoip-country@^4.0.78:
+  version "4.0.78"
+  resolved "https://registry.yarnpkg.com/geoip-country/-/geoip-country-4.0.78.tgz#3c0aa1b35fbd23913e939b01fb73fbc7e153ec56"
+  integrity sha512-hRIPzF+ZL+j7txnqAofsjuWLUXxuVYirioRmBi1bV9wm52+Pprn5KbXS6s1ahcKOGKx7nGY3lCqKm7b8decwnw==
   dependencies:
     async "^2.6.1"
     colors "^1.4.0"
