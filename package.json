@@ -13,7 +13,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.3.0",
     "@hackclub/meta": "^1.1.32",
-    "@hackclub/theme": "^0.3.2",
+    "@hackclub/theme": "^0.3.3",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.4",
     "@slack/web-api": "^6.2.4",
